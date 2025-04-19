@@ -1,1 +1,18 @@
-This is my readme, under construction!
+This software is under construction!
+
+# Password CLI - Written in Golang
+
+This is a password CLI- for those tired of creating new passwords everytime. What if you had one (or a bunch) of masterPasswords
+and you simple would permute them for different websites.
+
+Nothing is currently stored in anywhere, there will be development for exporting the generated password for a txt file later on. The masterpassword is only in your memory.
+
+## Development Todo (For first stable release):
+
+- [ ] Better CLI options (export to txt,csv)
+- [ ] Limit on permutation items
+- [ ] Unitary Test and Coverage Tests
+- [ ] CI/CD for releases versioning
+- [ ] More randomness to the process (better security)
+- [ ] Option for 1 permutation only
+- [x] Copy to clipboard
