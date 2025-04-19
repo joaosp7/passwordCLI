@@ -1,6 +1,7 @@
 package permutation
 
 import (
+	"regexp"
 	"sort"
 
 	customerrors "github.com/joaosp7/passwordCLI/errors"
@@ -21,8 +22,9 @@ func (p *Permutator) FindPermutations(input string) ([]string, error) {
 	if (len(input) == 0) {
 		return nil, customerrors.ErrEmptyInput
 	}
-
-	chars := []rune(input)
+	regx := regexp.MustCompile(`\s+`)
+	input_trim := regx.ReplaceAllString(input, "")
+	chars := []rune(input_trim)
 
 	sortedChars := make([]rune, len(chars))
 

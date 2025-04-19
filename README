@@ -11,8 +11,10 @@ Nothing is currently stored in anywhere, there will be development for exporting
 
 - [ ] Better CLI options (export to txt,csv)
 - [ ] Limit on permutation items
-- [ ] Unitary Test and Coverage Tests
+- [x] Unitary Test and Coverage Tests
 - [ ] CI/CD for releases versioning
 - [ ] More randomness to the process (better security)
 - [ ] Option for 1 permutation only
 - [x] Copy to clipboard
+
+Update 04/19/2025 : Added some unitary tests and got some interesting bugs fixed, such as whitespaces on password input. Regex did the trick. The ideia now is that every feature added must come with its sets of unitary tests on regular and edge cases to prove efficiency.
