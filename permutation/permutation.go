@@ -7,7 +7,7 @@ import (
 )
 
 type Permutator struct {
-	results map[string]struct{}
+	results map[string]struct{} //Set definition
 
 }
 
