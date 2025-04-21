@@ -18,3 +18,5 @@ Nothing is currently stored in anywhere, there will be development for exporting
 - [x] Copy to clipboard
 
 Update 04/19/2025 : Added some unitary tests and got some interesting bugs fixed, such as whitespaces on password input. Regex did the trick. The ideia now is that every feature added must come with its sets of unitary tests on regular and edge cases to prove efficiency.
+
+Update 04/21/2025: Added function for creating a directory witch will be a feature for exporting csv-txt files and its respectives unitary tests.
