@@ -29,3 +29,16 @@ func CreateDirectory(path string) error{
 	return customerrors.ErrDirectoryExists
 }
 
+
+func CreateFile(path string, passwords string) error {
+	if (len(path) == 0) {
+		return customerrors.ErrDirectoryInvalidString
+	}
+	pathFile :=  path + "/passwords.txt"
+	err := os.WriteFile(pathFile, []byte(passwords), 0755)
+	if err != nil {
+		log.Fatal("Unable to write file: ", err)
+		return err
+	}
+	return nil 
+}

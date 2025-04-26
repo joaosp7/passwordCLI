@@ -46,7 +46,46 @@ func TestCreateDirectory(t *testing.T){
 
 		})
 	}
+}
+
+func TestCreateFile(t *testing.T){
+	tests := []struct{
+		name string 
+		path string 
+		wantErr bool
+		err error
+	}{		{
+		name: "Empty string",
+		path: "",
+		wantErr: true,
+		err: customerrors.ErrDirectoryInvalidString,
+	},
+		{
+			name: "It should be able to create a file",
+			path: "./",
+			wantErr: false,
+		}, 
+
+	}
+
+	for _, tt := range tests {
+		filePath := tt.path + "passwords.txt"
+		defer os.Remove(filePath)
+		t.Run(tt.name, func(t *testing.T) {
+			err := filesystem.CreateFile(tt.path, "ABC \n BCA \n CAB")
+
+			if err != nil{
+				assert.Error(t, err, tt.err )
+				assert.NoFileExists(t, filePath)
+				assert.True(t, tt.wantErr)
+				return
+			}
+
+			assert.NoError(t, err)
+			assert.FileExists(t, filePath)
+			assert.False(t, tt.wantErr)
 
 
-
+		})
+	}
 }
