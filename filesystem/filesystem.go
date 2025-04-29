@@ -5,6 +5,7 @@ import (
 	"os"
 
 	customerrors "github.com/joaosp7/passwordCLI/errors"
+	"github.com/joaosp7/passwordCLI/helpers"
 )
 
 func CreateDirectory(path string) error{
@@ -41,4 +42,19 @@ func CreateFile(path string, passwords string) error {
 		return err
 	}
 	return nil 
+}
+
+func GenerateTxt(path string, passwords []string) error {
+	err := CreateDirectory(path)
+	if err!= nil {
+		log.Fatal("Unable to create directory.")
+		return err
+	}
+	passString := helpers.PassowrdsToString(passwords)
+	err = CreateFile(path, passString )
+	if (err != nil){
+		log.Fatal("Unable to create file.")
+		return err
+	}
+	return nil
 }
