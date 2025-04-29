@@ -6,11 +6,13 @@ import (
 	"log"
 	"time"
 
+	"github.com/joaosp7/passwordCLI/filesystem"
 	"github.com/joaosp7/passwordCLI/permutation"
 	"golang.design/x/clipboard"
 )
 type Options struct{
 	password string
+	path string
 	copy bool
 }
 
@@ -18,6 +20,7 @@ type Options struct{
 func main() {
 		opt := Options{}
 		flag.StringVar(&opt.password,"password", "", "Password provided for permutation.")
+		flag.StringVar(&opt.path,"path", "", "Path provided to save the passwords in a txt file.")
 		flag.BoolVar(&opt.copy,"copy", false, "Option to copy password to clipboard.")
 		flag.Parse()
 
@@ -34,6 +37,12 @@ func main() {
 			fmt.Println("Permutation one coppied to clipboard.")
 		}
 		elapsed := time.Since(start)
+		if (len(opt.path) > 0 ){
+			errFile := filesystem.GenerateTxt(opt.path, results)
+			if errFile!=nil{
+				panic("Error creating the txt file. Please try again!")
+			}
+		}
     //fmt.Printf("Permutations of %q: %s\n", input, strings.Join(results, " "))
 		fmt.Println("Permutations generated: ", len(results))
 		fmt.Println("Process took around: ", elapsed)
