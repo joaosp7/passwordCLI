@@ -28,7 +28,7 @@ The copy keyword is if you want to copy to clipboard the first password generate
 - [x] Better CLI options (export to txt)
 - [ ] Limit on permutation items
 - [x] Unitary Test and Coverage Tests
-- [ ] CI/CD for releases versioning
+- [x] CI/CD for releases versioning
 - [ ] More randomness to the process (better security)
 - [ ] Option for 1 permutation only
 - [x] Copy to clipboard
