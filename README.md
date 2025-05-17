@@ -37,4 +37,4 @@ Update 04/19/2025 : Added some unitary tests and got some interesting bugs fixed
 
 Update 04/21/2025: Added function for creating a directory witch will be a feature for exporting csv-txt files and its respectives unitary tests.
 
-Update 04/29/2025: Guess the feature for exporting to txt is ready. Maybe in future we must implement more test on edge cases to avoid breaking the program as whole. The choice base file is txt for simplicity
+Update 04/29/2025: Guess the feature for exporting to txt is ready. Maybe in future we must implement more test on edge cases to avoid breaking the program as whole. The choice base file is txt for simplicity. Released beta version with CI on github workflow.
