@@ -35,4 +35,5 @@ jobs:
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
           release_tag: v0.1-beta
+          overwrite: true
       
