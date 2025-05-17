@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         go-version: [1.24.1]
-        goos: [linux, windows, darwin]
+        goos: [windows, darwin]
         goarch: [amd64, arm64]
 
     steps:
