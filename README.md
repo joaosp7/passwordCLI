@@ -28,7 +28,7 @@ The copy keyword is if you want to copy to clipboard the first password generate
 - [x] Better CLI options (export to txt)
 - [ ] Limit on permutation items
 - [x] Unitary Test and Coverage Tests
-- [ ] CI/CD for releases versioning
+- [x] CI/CD for releases versioning
 - [ ] More randomness to the process (better security)
 - [x] Option for 1 permutation only
 - [x] Copy to clipboard
@@ -40,3 +40,5 @@ Update 04/21/2025: Added function for creating a directory witch will be a featu
 Update 04/29/2025: Guess the feature for exporting to txt is ready. Maybe in future we must implement more test on edge cases to avoid breaking the program as whole. The choice base file is txt for simplicity
 
 update 05/17/2025: Added feature for one password only, this generate one random permutation, also need to add unitary test for those. A bit tricky since we have random numbers being generated
+
+Update 04/29/2025: Guess the feature for exporting to txt is ready. Maybe in future we must implement more test on edge cases to avoid breaking the program as whole. The choice base file is txt for simplicity. Released beta version with CI on github workflow.
