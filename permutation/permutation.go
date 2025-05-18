@@ -1,8 +1,10 @@
 package permutation
 
 import (
+	"math/rand"
 	"regexp"
 	"sort"
+	"strings"
 
 	customerrors "github.com/joaosp7/passwordCLI/errors"
 )
@@ -73,3 +75,26 @@ func (p *Permutator) getSortedResults() []string {
 
 }
 
+func OneRandomPermutation(masterPassword string) string {
+	masterPasswordsSlice := strings.Split(masterPassword, "")
+	
+
+	var builder strings.Builder
+	for range masterPasswordsSlice{
+
+		position := rand.Intn(len(masterPasswordsSlice))
+		character := masterPasswordsSlice[position]
+		builder.WriteString(character)
+		lefString := masterPasswordsSlice[:position]
+		rightString := masterPasswordsSlice[position:]
+		
+
+		masterPasswordsSlice = append(lefString, rightString...)
+
+	}
+	result := builder.String()
+
+	return result
+
+
+}

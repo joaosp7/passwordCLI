@@ -14,6 +14,7 @@ type Options struct{
 	password string
 	path string
 	copy bool
+	one bool
 }
 
 
@@ -22,11 +23,17 @@ func main() {
 		flag.StringVar(&opt.password,"password", "", "Password provided for permutation.")
 		flag.StringVar(&opt.path,"path", "", "Path provided to save the passwords in a txt file.")
 		flag.BoolVar(&opt.copy,"copy", false, "Option to copy password to clipboard.")
+		flag.BoolVar(&opt.one, "one", false, "Option to generete only one random password.")
 		flag.Parse()
 
 		start := time.Now()
 
     perm := permutation.NewPermutator()
+		if (opt.one){
+			result := permutation.OneRandomPermutation(opt.password)
+			fmt.Println("One permutation generated: ", result)
+			return 
+		}
     results, err := perm.FindPermutations(opt.password)
 
     if err != nil {
